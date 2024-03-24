@@ -16,7 +16,8 @@ import com.nextu.nextu_android_advanced.ui.theme.NextU_android_advancedTheme
 /**
  * A faire :
  *  - créer un package 'model' dans notre module com.nextu.nextu_android_advanced
- *  - créer les classes pour le modèle de Produit, Rating et Category suivant l'api https://fakestoreapi.com/docs
+ *  - créer les classes pour le modèle de Produit et Rating suivant l'api https://fakestoreapi.com/docs
+ *  - Rendre ces classes sérialisables avec kotlin serialization - les dépendences nécessaires ont déjà étés ajoutées au projet - https://kotlinlang.org/docs/serialization.html#serialize-and-deserialize-json
  */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

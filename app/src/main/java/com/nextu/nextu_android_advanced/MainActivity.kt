@@ -12,6 +12,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.nextu.nextu_android_advanced.ui.theme.NextU_android_advancedTheme
 
+
+/**
+ * A faire :
+ *  - créer un package 'model' dans notre module com.nextu.nextu_android_advaned
+ *  - créer les classes pour le modèle de Produit, Rating et Category suivant l'api https://fakestoreapi.com/docs
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

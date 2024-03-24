@@ -1,0 +1,57 @@
+[versions]
+agp = "8.3.0"
+kotlin = "1.9.0"
+coreKtx = "1.12.0"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+lifecycleRuntimeKtx = "2.7.0"
+lifecycleRuntimeCompose = "2.6.0-beta01"
+activityCompose = "1.8.2"
+composeBom = "2024.02.02"
+kotlinSerialization = "1.5.0"
+retrofit = "2.9.0"
+retrofitSerialization = "1.0.0"
+okHttp = "4.12.0"
+coil = "2.6.0"
+composeNavigation = "2.5.3"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleRuntimeCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+#Dépendances ajoutées
+
+#Android navigation compose pour utiliser la navigation avec compose
+androidx-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "composeNavigation" }
+#Coil de charger facilement une url dans une image en compose
+coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+#Kotlin serialization pour permettre la serialisation du json
+kotlin-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref ="kotlinSerialization"  }
+#Retrofit va nous permettre de passer simplement des appels http
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref ="retrofit"  }
+retrofit-scalars = { group = "com.squareup.retrofit2", name = "converter-scalars", version.ref ="retrofit"  }
+retrofit-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref ="retrofitSerialization"  }
+#okhttp logger pour permettre les logs avec retrofit
+okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref ="okHttp"  }
+
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+#Pugin de kotlin serialization
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+

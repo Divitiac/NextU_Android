@@ -15,20 +15,21 @@ import com.nextu.nextu_android_advanced.ui.theme.NextU_android_advancedTheme
 
 /**
  * A faire :
- *  - créer un package 'model' dans notre module com.nextu.nextu_android_advanced
- *  - créer les classes pour le modèle de Produit et Rating suivant l'api https://fakestoreapi.com/docs
- *  - Rendre ces classes sérialisables avec kotlin serialization - les dépendences nécessaires ont déjà étés ajoutées au projet - https://kotlinlang.org/docs/serialization.html#serialize-and-deserialize-json
+ *  - Déclarer un objet Product qui nous servira pour avoir du contenu dans la carte
+ *  - Créer un composant nommé ProductCard qui permettra l'affichage de la carte produit
+ *  - Créer une preview pour coder plus rapidement et améliorer la lisibilité des vues lorsqu'on navigue dans nos classes
  */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             NextU_android_advancedTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    // Ajouter ici le produit avec un remember
+                    // Retirer Greetings et le remplacer par un ProductCard
                     Greeting("Android")
                 }
             }
@@ -47,6 +48,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
+    // Remplacer cette preview par la preview de ProductCard
     NextU_android_advancedTheme {
         Greeting("Android")
     }

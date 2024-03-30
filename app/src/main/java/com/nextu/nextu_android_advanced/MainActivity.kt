@@ -18,6 +18,17 @@ import com.nextu.nextu_android_advanced.ui.theme.NextU_android_advancedTheme
  *  - Déclarer un objet Product qui nous servira pour avoir du contenu dans la carte
  *  - Créer un composant nommé ProductCard qui permettra l'affichage de la carte produit
  *  - Créer une preview pour coder plus rapidement et améliorer la lisibilité des vues lorsqu'on navigue dans nos classes
+ *
+ *  exemple de produit :
+ *   Product(
+ *     category = "Coffee",
+ *     description = "A rich blend of premium coffee beans sourced from Colombia and Ethiopia, roasted to perfection.",
+ *     id = 123456,
+ *     image = "https://tinyurl.com/vtymn7w5",
+ *     price = 9.99,
+ *     rating = Rating(count = 256, rate = 4.5),
+ *     title = "Premium Blend Coffee"
+ *   )
  */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

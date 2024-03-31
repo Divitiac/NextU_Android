@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
@@ -26,13 +27,16 @@ import com.nextu.nextu_android_advanced.ui.theme.Typography
 
 @Composable
 fun HomePageScreen(homePageViewModel: HomePageViewModel) {
-    val product = homePageViewModel.product.collectAsState()
+    val products = homePageViewModel.productList.collectAsState()
 
     Column(Modifier.fillMaxWidth()) {
-        ProductCard(product = product.value)
+        LazyColumn {
+            items(products.value.size) { index ->
+                ProductCard(product = products.value[index])
+            }
+        }
     }
 }
-
 
 
 @Composable

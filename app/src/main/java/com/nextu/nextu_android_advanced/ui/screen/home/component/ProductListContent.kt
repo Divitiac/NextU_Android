@@ -26,6 +26,7 @@ fun ProductListContent(
     categories: List<Category>,
     products: List<Product>,
 ) {
+    // Colonne avec les 2 textes du header
     Column(
         Modifier
             .fillMaxWidth()
@@ -38,6 +39,7 @@ fun ProductListContent(
         Text("Collection", style = Typography.bodyLarge)
     }
 
+    // LazyRow avec les catégories
     LazyRow(
         Modifier
             .fillMaxWidth()
@@ -55,6 +57,7 @@ fun ProductListContent(
         }
     }
 
+    // La grille avec les produits
     LazyVerticalStaggeredGrid(
         columns = StaggeredGridCells.Fixed(2),
         modifier = Modifier.padding(top = 8.dp, start = 8.dp, end = 8.dp)

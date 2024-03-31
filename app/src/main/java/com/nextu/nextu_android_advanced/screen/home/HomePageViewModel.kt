@@ -43,11 +43,15 @@ class HomePageViewModel : ViewModel() {
 
 
     private suspend fun fetchAllProducts() {
-        val products = storeEndpoint?.getAllProducts()
-        products?.let {
-            productList.update { products }
+        try {
+            val products = storeEndpoint?.getAllProducts()
+            products?.let {
+                productList.update { products }
+            }
+            Log.d("HomePageViewModel", "received ${products?.size ?: "0"} products")
+        } catch (e: Exception) {
+            Log.e("HomePageViewModel", e.message.toString())
         }
-        Log.d("HomePageViewModel", "received ${products?.size ?: "0"} products")
     }
 
 }

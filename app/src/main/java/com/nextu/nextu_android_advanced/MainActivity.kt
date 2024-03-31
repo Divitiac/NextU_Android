@@ -16,11 +16,13 @@ import com.nextu.nextu_android_advanced.ui.theme.NextU_android_advancedTheme
 /**
  * A faire:
  *
- * Créer l’écran HomePageScreen en prévision des prochains écrans. Il va être accompagné d’un ViewModel
+ * Créer l'interface StoreEndpoint
  *
- * On va mettre le produit dans le viewmodel et le rendre disponible pour l’écran
+ * Créer une instance retrofit pour avoir un StoreEndpoint
  *
- * On va brancher le HomePageScreen pour afficher le produit dans la carte
+ * Mettre à disposition des produits récupérée dans un MutableStateFlow
+ *
+ * Les afficher en tant que liste scrollable dans le HomePageScreen
  *
  */
 class MainActivity : ComponentActivity() {

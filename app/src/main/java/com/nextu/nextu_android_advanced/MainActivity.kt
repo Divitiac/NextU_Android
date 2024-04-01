@@ -22,13 +22,13 @@ import com.nextu.nextu_android_advanced.ui.theme.NextU_android_advancedTheme
 class MainActivity : ComponentActivity() {
     private val viewModel = MainViewModel()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContent {
             NextU_android_advancedTheme {
                 val homePageViewModel = remember {
-                    HomePageViewModel(viewModel.createStoreManager())
+                    HomePageViewModel(viewModel.createStoreRepository())
                 }
                 Surface(
                     modifier = Modifier.fillMaxSize(),

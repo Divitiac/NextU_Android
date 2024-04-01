@@ -13,7 +13,7 @@ import retrofit2.Retrofit
 class MainViewModel : ViewModel() {
     private var storeRepository: StoreRepository? = null
 
-    fun createStoreManager(): StoreRepository {
+    fun createStoreRepository(): StoreRepository {
         return if (storeRepository != null) storeRepository!!
         else {
             val okHttpClient = OkHttpClient.Builder()
@@ -34,3 +34,4 @@ class MainViewModel : ViewModel() {
         }
     }
 }
+

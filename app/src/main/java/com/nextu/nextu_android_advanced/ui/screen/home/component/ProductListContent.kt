@@ -15,10 +15,13 @@ import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nextu.nextu_android_advanced.model.Category
 import com.nextu.nextu_android_advanced.model.Product
+import com.nextu.nextu_android_advanced.model.Rating
+import com.nextu.nextu_android_advanced.ui.theme.NextU_android_advancedTheme
 import com.nextu.nextu_android_advanced.ui.theme.Typography
 
 @Composable
@@ -66,6 +69,36 @@ fun ProductListContent(
             val product = products[index]
             ProductCard(
                 product = product,
+            )
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ProductListContentPreview() {
+    NextU_android_advancedTheme {
+        Column {
+            ProductListContent(
+                listOf(Category("All")), listOf(
+                    Product(
+                        category = "Coffee",
+                        description = "A rich blend of premium coffee beans sourced from Colombia and Ethiopia, roasted to perfection.",
+                        id = 123456,
+                        image = "https://tinyurl.com/vtymn7w5",
+                        price = 9.99,
+                        rating = Rating(count = 256, rate = 4.5),
+                        title = "Premium Blend Coffee"
+                    ), Product(
+                        category = "Coffee",
+                        description = "A rich blend of premium coffee beans sourced from Colombia and Ethiopia, roasted to perfection.",
+                        id = 123456,
+                        image = "https://tinyurl.com/vtymn7w5",
+                        price = 9.99,
+                        rating = Rating(count = 256, rate = 4.5),
+                        title = "Premium Blend Coffee"
+                    )
+                )
             )
         }
     }

@@ -28,7 +28,8 @@ import com.nextu.nextu_android_advanced.ui.theme.Typography
 fun ProductListContent(
     categories: List<Category>,
     products: List<Product>,
-    onCategoryClicked: (category: Category) -> Unit
+    onCategoryClicked: (category: Category) -> Unit,
+    navigateToProductDetail: (productId: String) -> Unit
 ) {
     // Colonne avec les 2 textes du header
     Column(
@@ -70,6 +71,7 @@ fun ProductListContent(
             val product = products[index]
             ProductCard(
                 product = product,
+                navToProductDetail = { navigateToProductDetail(it) }
             )
         }
     }
@@ -100,6 +102,7 @@ fun ProductListContentPreview() {
                         title = "Premium Blend Coffee"
                     )
                 ),
+                {},
                 {}
             )
         }

@@ -1,3 +1,4 @@
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -22,11 +23,18 @@ import com.nextu.nextu_android_advanced.ui.theme.NextU_android_advancedTheme
 import com.nextu.nextu_android_advanced.ui.theme.Typography
 
 @Composable
-fun ProductCard(product: Product, modifier: Modifier = Modifier) {
+fun ProductCard(
+    product: Product,
+    navToProductDetail: (productId: String) -> Unit,
+    modifier: Modifier = Modifier
+) {
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(8.dp),
+            .padding(8.dp)
+            .clickable {
+                navToProductDetail(product.id.toString())
+            },
         elevation = CardDefaults.cardElevation(
             defaultElevation = 8.dp
         ),
@@ -70,7 +78,8 @@ fun ProductCardPreview() {
                 price = 9.99,
                 rating = Rating(count = 256, rate = 4.5),
                 title = "Premium Blend Coffee"
-            )
+            ),
+            {}
         )
     }
 }

@@ -12,7 +12,10 @@ import com.nextu.nextu_android_advanced.ui.extension.OnStartEffect
 import com.nextu.nextu_android_advanced.ui.screen.home.component.ProductListContent
 
 @Composable
-fun HomePageScreen(homePageViewModel: HomePageViewModel) {
+fun HomePageScreen(
+    homePageViewModel: HomePageViewModel,
+    navToProductDetail: (productId: String) -> Unit,
+) {
     val state by homePageViewModel.state.collectAsStateWithLifecycle()
     val lifecycleOwner = LocalLifecycleOwner.current
 
@@ -33,7 +36,8 @@ fun HomePageScreen(homePageViewModel: HomePageViewModel) {
                 products = state.products,
                 onCategoryClicked = { category ->
                     homePageViewModel.selectCategory(category)
-                }
+                },
+                navigateToProductDetail = { navToProductDetail(it) }
             )
         }
     }

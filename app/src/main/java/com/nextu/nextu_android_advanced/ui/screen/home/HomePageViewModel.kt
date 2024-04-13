@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nextu.nextu_android_advanced.model.Category
 import com.nextu.nextu_android_advanced.model.Product
-import com.nextu.nextu_android_advanced.store.StoreRepository
+import com.nextu.nextu_android_advanced.data.store.StoreRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

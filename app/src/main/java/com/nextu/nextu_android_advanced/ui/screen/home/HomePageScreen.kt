@@ -29,8 +29,11 @@ fun HomePageScreen(homePageViewModel: HomePageViewModel) {
             LoadingContent()
         } else {
             ProductListContent(
-                state.categories,
-                state.products
+                categories = state.categories,
+                products = state.products,
+                onCategoryClicked = { category ->
+                    homePageViewModel.selectCategory(category)
+                }
             )
         }
     }

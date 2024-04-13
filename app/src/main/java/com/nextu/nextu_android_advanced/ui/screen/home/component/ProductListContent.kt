@@ -28,6 +28,7 @@ import com.nextu.nextu_android_advanced.ui.theme.Typography
 fun ProductListContent(
     categories: List<Category>,
     products: List<Product>,
+    onCategoryClicked: (category: Category) -> Unit
 ) {
     // Colonne avec les 2 textes du header
     Column(
@@ -53,7 +54,7 @@ fun ProductListContent(
             val category = categories[index]
             FilterChip(
                 selected = category.isSelected,
-                onClick = { /* onClick */ },
+                onClick = { onCategoryClicked(category) },
                 label = { Text(category.name) },
                 modifier = Modifier.padding(horizontal = 4.dp),
             )
@@ -98,7 +99,8 @@ fun ProductListContentPreview() {
                         rating = Rating(count = 256, rate = 4.5),
                         title = "Premium Blend Coffee"
                     )
-                )
+                ),
+                {}
             )
         }
     }

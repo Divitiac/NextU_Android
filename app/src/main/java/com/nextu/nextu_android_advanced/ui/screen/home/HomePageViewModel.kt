@@ -67,4 +67,27 @@ class HomePageViewModel(private val storeRepository: StoreRepository) : ViewMode
         }
     }
 
+    fun selectCategory(category: Category) {
+        viewModelScope.launch(Dispatchers.IO) {
+            _state.update { state ->
+                // Avec le map on itère sur les catégories et on set son isSelected à true si la catégorie à le même nom que celle qui a été sélectionnée
+                state.copy(categories = state.categories.map { localCategory ->
+                    localCategory.isSelected = localCategory.name == category.name
+                    localCategory
+                })
+            }
+
+            if (category.name == CATEGORY_ALL) {
+                fetchAllProducts()
+            } else {
+                loadProductsByCategory(category)
+            }
+        }
+    }
+
+    private suspend fun loadProductsByCategory(category: Category) {
+        val productRequest = storeRepository.getProductsByCategory(category.name)
+        _state.update { it.copy(products = productRequest) }
+    }
+
 }

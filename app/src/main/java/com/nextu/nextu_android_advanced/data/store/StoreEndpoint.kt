@@ -1,4 +1,4 @@
-package com.nextu.nextu_android_advanced.store
+package com.nextu.nextu_android_advanced.data.store
 
 import com.nextu.nextu_android_advanced.model.Product
 import retrofit2.http.GET
